@@ -83,16 +83,40 @@ query = st.text_input("📖 Enter a book title or keyword:")
 
 if query:
     matched_books = search_books(query, merge_df1)
-    selected_book = st.selectbox("Did you mean?", matched_books) if len(matched_books) > 0 else ""
-    recommendations = recommend(selected_book, data, similarity, merge_df1) if selected_book else []
+    selected_book = st.selectbox("Did you mean?", matched_books) if matched_books.size > 0 else ""
     
+    if selected_book:
+        recommendations = recommend(selected_book, data, similarity, merge_df1)
+    else:
+        recommendations = []
+
     if recommendations:
-        cols = st.columns(len(recommendations))
-        for col, book in zip(cols, recommendations):
-            with col:
-                st.image(book.get("Image-URL-L", "https://via.placeholder.com/150"), use_column_width=True)
-                st.markdown(f"**{book['Book-Title'].title()}**")
-                st.markdown(f"✍️ **Author:** {book['Book-Author']}  ")
-                st.markdown(f"📅 **Year:** {book['Year-Of-Publication']}")
+        def display_recommendations(recommendations):
+            """Display book recommendations with clickable titles."""
+            num_books = len(recommendations)
+            cols = st.columns(num_books)
+
+            for col, book in zip(cols, recommendations):
+                with col:
+                    image_url = book.get("Image-URL-L", "https://via.placeholder.com/150")
+                    st.image(image_url, use_column_width=True)
+
+                    if st.button(f"📖 {book['Book-Title'].title()}"):
+                        st.session_state.selected_book = book['Book-Title']
+                        st.rerun()
+
+                    # Wrap book details inside a black box
+                    st.markdown(
+                        f"""
+                        <div class="book-details">
+                            ✍️ <b>Author:</b> {book['Book-Author']} <br>
+                            📅 <b>Year:</b> {book['Year-Of-Publication']}
+                        </div>
+                        """,
+                        unsafe_allow_html=True
+                    )
+
+        
+        display_recommendations(recommendations)
     else:
         st.warning("❌ No recommendations found. Try another book.")
