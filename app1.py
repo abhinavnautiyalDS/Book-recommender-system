@@ -1,4 +1,4 @@
-pip install streamlit==1.30.0 pandas==2.1.4 numpy==1.26.4 pickle-mixin==1.0.2 gdown
+!pip install streamlit==1.30.0 pandas==2.1.4 numpy==1.26.4 pickle-mixin==1.0.2 gdown
 
 
 import streamlit as st
