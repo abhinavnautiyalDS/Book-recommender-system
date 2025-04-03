@@ -1,5 +1,5 @@
+![image (1) (1)](https://github.com/user-attachments/assets/8538935a-4be2-4885-8ca3-826e37795c79)
 
-![image](https://github.com/user-attachments/assets/aa6033b6-10ef-4701-869c-4d21016d7cb9)
 
 # 📚 Book Recommendation System
 
