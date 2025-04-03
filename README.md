@@ -52,7 +52,7 @@ After preprocessing, the dataset contains **900 users** and **690 books**.
 ## Installation
 
 Hosted App
-🚀 Try out the live demo: Book Recommender System
+🚀 Try out the live demo: https://book-recommender-system-k8ovbvzqutwxxvzgjez4ui.streamlit.app/
 
 1. Clone the repository:
    ```bash
@@ -86,6 +86,7 @@ Hosted App
 Feel free to fork, improve, and submit pull requests. Contributions are welcome! 😊
 
 ## License
-This project is open-source and available under the **MIT License**.
+This project is open-source and available under the **Apache License 2.0
+**.
 
 
