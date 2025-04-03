@@ -127,7 +127,7 @@ st.markdown(
         .book-details {
             background: rgba(0, 0, 0, 0.8); /* Black background for better readability */
             color: white;
-            font-size: 25px; /* Increase font size */
+            font-size: 20px; /* Increase font size */
             padding: 8px;
             border-radius: 5px;
             display: inline-block;
@@ -135,7 +135,7 @@ st.markdown(
         }
 
         h1 {
-            font-size: 60px !important; /* Increase title size */
+            font-size: 50px !important; /* Increase title size */
             font-weight: bold;
             text-align: center;
         }
