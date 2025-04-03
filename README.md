@@ -79,7 +79,7 @@ Hosted App
 
 ## Future Improvements
 - 📌 **Hybrid Recommendation System** (combining content-based & collaborative filtering)
-- 🚀 **Deployment on Streamlit Cloud / Heroku**
+- 🚀 **Deployment on Streamlit Cloud**
 - 📊 **User-Based Personalization**
 
 ## Contributing
