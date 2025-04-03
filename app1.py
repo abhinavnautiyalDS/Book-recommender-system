@@ -6,10 +6,22 @@ import pickle
 import pandas as pd
 import numpy as np
 import base64
+import gdown
+
+# Google Drive file ID (Replace this with your actual file ID)
+file_id = "191k7cqEm0JZmhdBujowlT9CroGTrWZ1c"
+
+
+# Construct the direct download URL
+url = f"https://drive.google.com/uc?id={file_id}"
+
+# Download the file
+output_path = "recommend.pkl"
+gdown.download(url, output_path, quiet=False)
 
 
 # Load the recommendation function and data
-with open("recommend.pkl", "rb") as file:
+with open(output_path, "rb") as file:
     data_dict = pickle.load(file)
 
 data = data_dict["data"]
