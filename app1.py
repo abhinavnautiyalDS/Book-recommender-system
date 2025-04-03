@@ -62,7 +62,7 @@ def get_base64_image(image_path):
         st.error("Image file not found!")
         return None
 
-image_base64 = get_base64_image("image.png")
+image_base64 = get_base64_image("image (79).png")
 
 if image_base64:
     page_bg_img = f"""
