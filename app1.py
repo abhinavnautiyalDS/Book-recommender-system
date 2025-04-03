@@ -1,6 +1,8 @@
 !pip install streamlit==1.30.0 pandas==2.1.4 numpy==1.26.4 pickle-mixin==1.0.2 gdown
 
 
+import os
+import subprocess
 import streamlit as st
 import pickle
 import pandas as pd
@@ -8,16 +10,21 @@ import numpy as np
 import base64
 import gdown
 
-# Google Drive file ID (Replace this with your actual file ID)
+# Install missing packages
+required_packages = ["streamlit==1.30.0", "pandas==2.1.4", "numpy==1.26.4", "pickle-mixin==1.0.2", "gdown"]
+
+for package in required_packages:
+    try:
+        __import__(package.split("==")[0])  # Check if package is already installed
+    except ImportError:
+        subprocess.run(["pip", "install", package])
+
+# Google Drive file ID
 file_id = "191k7cqEm0JZmhdBujowlT9CroGTrWZ1c"
+output_file = "recommend.pkl"
 
-
-# Construct the direct download URL
-url = f"https://drive.google.com/uc?id={file_id}"
-
-# Download the file
-output_path = "recommend.pkl"
-gdown.download(url, output_path, quiet=False)
+# Download file
+gdown.download(f"https://drive.google.com/uc?id={file_id}", output_file, quiet=False)
 
 
 # Load the recommendation function and data
