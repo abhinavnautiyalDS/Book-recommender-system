@@ -5,6 +5,7 @@ import numpy as np
 import gdown
 import base64
 import os
+pip install scikit-learn
 
 # Install dependencies from requirements.txt
 if not os.path.exists(".installed_dependencies"):  # Run only once
