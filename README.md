@@ -76,6 +76,9 @@ Hosted App
 
 ## Screenshots
 ![image](https://github.com/user-attachments/assets/71c8cc1e-dc02-4631-9e2d-b8500d8fec2d)
+![Streamlit-GoogleChrome2025-04-0512-20-40-ezgif com-crop](https://github.com/user-attachments/assets/d86be0ef-8416-42f8-901a-45a6b446d2fa)
+
+
 
 ## Future Improvements
 - 📌 **Hybrid Recommendation System** (combining content-based & collaborative filtering)
